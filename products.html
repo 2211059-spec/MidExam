@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Aura Sound Store</title>
+    <meta name="description" content="Explore our range of wireless headphones, earbuds, and desktop speakers.">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- Name: Fizzatun mishfa | ID: 2211059 -->
+
+    <!-- ================= HEADER & NAV BAR (Requirement 2 & 3) ================= -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" id="header-logo">
+                <i class="fa-solid fa-headphones"></i> AURA SOUND
+            </a>
+
+            <!-- Navigation Bar with Hover Effects (Requirement 3) -->
+            <nav class="navbar" id="main-navbar">
+                <ul class="nav-links">
+                    <li class="nav-item"><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+                    <li class="nav-item"><a href="products.html" class="nav-link active" id="nav-products">Products</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link" id="nav-contact">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Requirement 6: Button using onclick event handler -->
+                <button class="cart-btn" onclick="toggleCartModal()" id="header-cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i> Cart (<span id="cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="products-page-wrapper">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="hero-badge">Our Collection</span>
+                <h1 class="section-title">Explore Our Products</h1>
+                
+                <!-- Paragraph 1 (Requirement 4) -->
+                <p class="section-desc">
+                    Browse our high quality selection of wireless headphones, compact noise-cancelling earbuds, and desktop acoustic speakers. All items come with a 2-year warranty and free shipping.
+                </p>
+            </div>
+
+            <!-- Filter Bar with Interactive Filter Buttons (Requirement 6: onclick handlers) -->
+            <div class="filter-bar">
+                <span style="font-weight: 600; color: #212529;">
+                    <i class="fa-solid fa-filter" style="color: #0d6efd;"></i> Filter by Category:
+                </span>
+                <div class="filter-btn-group">
+                    <!-- Requirement 6: Buttons using onclick event handlers -->
+                    <button class="filter-btn active" onclick="filterProducts('all', this)" id="filter-all-btn">All</button>
+                    <button class="filter-btn" onclick="filterProducts('headphones', this)" id="filter-headphones-btn">Headphones</button>
+                    <button class="filter-btn" onclick="filterProducts('earbuds', this)" id="filter-earbuds-btn">Earbuds</button>
+                    <button class="filter-btn" onclick="filterProducts('speakers', this)" id="filter-speakers-btn">Speakers</button>
+                </div>
+            </div>
+
+            <!-- ================= PRODUCT CATALOG GRID (Requirement 5: uses display-grid CSS property) ================= -->
+            <div class="products-grid" id="main-products-grid">
+                
+                <!-- Product Card 1 -->
+                <div class="product-card" data-category="headphones">
+                    <span class="product-badge">Popular</span>
+                    <div class="product-thumb-container">
+                        <!-- Image 1 (Requirement 4) -->
+                        <img src="images/hero_headphone.png" alt="Aura Studio Pro Headphones" class="product-thumb" id="img-product-1">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Headphones</span>
+                        <h3 class="product-name">Aura Studio Pro</h3>
+                        <p class="product-desc-snippet">
+                            Over-ear headphones featuring 50mm drivers, active noise cancellation, and soft ear cushions for comfort.
+                        </p>
+                        <div class="product-price-row">
+                            <span class="product-price">$299</span>
+                            <div style="display: flex; gap: 8px;">
+                                <!-- Requirement 6: Button with onclick event handler -->
+                                <button class="btn btn-secondary" style="padding: 6px 12px;" onclick="openQuickView('Aura Studio Pro', 'Over-ear headphones with active noise cancellation and 60-hour battery life.', '$299')" title="Quick View">
+                                    <i class="fa-solid fa-eye"></i> View
+                                </button>
+                                <!-- Requirement 6: Button with onclick event handler -->
+                                <button class="btn btn-primary" style="padding: 6px 14px;" onclick="addToCart('Aura Studio Pro', 299)" id="btn-add-p1">
+                                    <i class="fa-solid fa-cart-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card" data-category="earbuds">
+                    <span class="product-badge">New</span>
+                    <div class="product-thumb-container">
+                        <!-- Image 2 (Requirement 4) -->
+                        <img src="images/product_earbuds.png" alt="Aura Pods Ultra Earbuds" class="product-thumb" id="img-product-2">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Wireless Earbuds</span>
+                        <h3 class="product-name">Aura Pods Ultra</h3>
+                        <p class="product-desc-snippet">
+                            True wireless in-ear earbuds with clear voice call microphones and IPX7 water resistance rating.
+                        </p>
+                        <div class="product-price-row">
+                            <span class="product-price">$189</span>
+                            <div style="display: flex; gap: 8px;">
+                                <!-- Requirement 6: Button with onclick event handler -->
+                                <button class="btn btn-secondary" style="padding: 6px 12px;" onclick="openQuickView('Aura Pods Ultra', 'In-ear wireless earbuds with compact charging case and IPX7 rating.', '$189')" title="Quick View">
+                                    <i class="fa-solid fa-eye"></i> View
+                                </button>
+                                <!-- Requirement 6: Button with onclick event handler -->
+                                <button class="btn btn-primary" style="padding: 6px 14px;" onclick="addToCart('Aura Pods Ultra', 189)" id="btn-add-p2">
+                                    <i class="fa-solid fa-cart-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card" data-category="speakers">
+                    <span class="product-badge">Featured</span>
+                    <div class="product-thumb-container">
+                        <!-- Image 3 (Requirement 4) -->
+                        <img src="images/product_speaker.png" alt="Aura Pulse 360 Speaker" class="product-thumb" id="img-product-3">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Desktop Speaker</span>
+                        <h3 class="product-name">Aura Pulse 360</h3>
+                        <p class="product-desc-snippet">
+                            Compact bluetooth acoustic speaker providing 360-degree sound distribution and warm lighting.
+                        </p>
+                        <div class="product-price-row">
+                            <span class="product-price">$249</span>
+                            <div style="display: flex; gap: 8px;">
+                                <!-- Requirement 6: Button with onclick event handler -->
+                                <button class="btn btn-secondary" style="padding: 6px 12px;" onclick="openQuickView('Aura Pulse 360 Speaker', 'Desktop Bluetooth speaker with rich bass and ambient light.', '$249')" title="Quick View">
+                                    <i class="fa-solid fa-eye"></i> View
+                                </button>
+                                <!-- Requirement 6: Button with onclick event handler -->
+                                <button class="btn btn-primary" style="padding: 6px 14px;" onclick="addToCart('Aura Pulse 360 Speaker', 249)" id="btn-add-p3">
+                                    <i class="fa-solid fa-cart-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ADDITIONAL CONTENT SECTION WITH PARAGRAPHS & SPECS GRID (Requirement 4 & 5) -->
+            <div class="specs-grid-section">
+                <h2 style="font-size: 1.8rem; margin-bottom: 15px; text-align: center;">Quality & Standards</h2>
+                
+                <!-- Paragraph 2 (Requirement 4) -->
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 20px auto;">
+                    We inspect each product before packaging to make sure it meets high audio standards. Our hardware uses durable materials, long-lasting battery cells, and standard USB-C charging ports for user convenience.
+                </p>
+
+                <!-- Paragraph 3 (Requirement 4) -->
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px auto;">
+                    Connect your devices seamlessly using Bluetooth 5.3 technology. Compatible with Android, iOS, Windows, and macOS operating systems without needing driver installations.
+                </p>
+
+                <!-- Grid Layout for Specs (Requirement 5: display-grid) -->
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <h4><i class="fa-solid fa-check"></i> High Definition Sound</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Clear treble and balanced bass frequency output.</p>
+                    </div>
+                    <div class="spec-item">
+                        <h4><i class="fa-solid fa-battery-full"></i> Long Battery Backup</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Up to 60 hours continuous music playback time.</p>
+                    </div>
+                    <div class="spec-item">
+                        <h4><i class="fa-solid fa-shield"></i> 2-Year Warranty</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Full customer warranty protection and free support.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ================= FOOTER (Requirement 2) ================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo" style="margin-bottom: 10px;"><i class="fa-solid fa-headphones"></i> AURA SOUND</h3>
+                    <p>Providing simple, reliable, and high-quality audio products for music enthusiasts worldwide.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="products.html">Warranty Policy</a></li>
+                        <li><a href="contact.html">Shipping Info</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Subscribe to Updates</h4>
+                    <p>Get notified about new product arrivals and discounts.</p>
+                    <div class="footer-newsletter-input">
+                        <input type="email" id="newsletter-email" placeholder="Your email address...">
+                        <!-- Requirement 6: Button with onclick event handler -->
+                        <button class="btn btn-primary" onclick="subscribeNewsletter()" id="footer-subscribe-btn">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aura Sound. All Rights Reserved. Student ID: 2211059</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick Preview Modal Dialog -->
+    <div class="modal-overlay" id="quick-modal">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+            <h3 id="modal-title" style="margin-bottom: 10px; color: #0d6efd;">Product Preview</h3>
+            <p id="modal-desc" style="margin-bottom: 20px;">Product description will appear here.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #dee2e6; padding-top: 15px;">
+                <span id="modal-price" style="font-size: 1.3rem; font-weight: 700; color: #0d6efd;">$0</span>
+                <button class="btn btn-primary" onclick="closeModal(); showToast('Preview closed');">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

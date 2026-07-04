@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Aura Sound</title>
+    <meta name="description" content="Contact our customer care team or visit our showroom location.">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- Name: Fizzatun mishfa | ID: 2211059 -->
+
+    <!-- ================= HEADER & NAV BAR (Requirement 2 & 3) ================= -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" id="header-logo">
+                <i class="fa-solid fa-headphones"></i> AURA SOUND
+            </a>
+
+            <!-- Navigation Bar with Hover Effects (Requirement 3) -->
+            <nav class="navbar" id="main-navbar">
+                <ul class="nav-links">
+                    <li class="nav-item"><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+                    <li class="nav-item"><a href="products.html" class="nav-link" id="nav-products">Products</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link active" id="nav-contact">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Requirement 6: Button using onclick event handler -->
+                <button class="cart-btn" onclick="toggleCartModal()" id="header-cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i> Cart (<span id="cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="contact-page-wrapper">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="hero-badge">Get in Touch</span>
+                <h1 class="section-title">Contact Our Team</h1>
+                
+                <!-- Paragraph 1 (Requirement 4) -->
+                <p class="section-desc">
+                    We are here to help you with product details, warranty inquiries, and order support. Send us a message using the form below or reach out directly via email or telephone.
+                </p>
+            </div>
+
+            <!-- Contact Layout -->
+            <div class="contact-layout">
+                
+                <!-- Left Column: Contact Cards & Info -->
+                <div class="contact-info-column">
+                    
+                    <div class="contact-card">
+                        <h3>Store Headquarters</h3>
+                        <!-- Paragraph 2 (Requirement 4) -->
+                        <p style="margin-top: 10px;">
+                            Our customer care representatives are available Sunday through Thursday to assist you. Feel free to visit our store showroom or request online support anytime.
+                        </p>
+
+                        <div class="contact-info-list">
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <h4 style="font-size: 1rem;">Main Office & Showroom</h4>
+                                    <p style="font-size: 0.9rem; margin-bottom: 0;">100 Acoustic Parkway, Suite 400<br>City Center, NY 10001</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <h4 style="font-size: 1rem;">Phone Contact</h4>
+                                    <p style="font-size: 0.9rem; margin-bottom: 0;">+1 (800) 555-2872<br>Toll-free Customer Line</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <h4 style="font-size: 1rem;">Email Address</h4>
+                                    <p style="font-size: 0.9rem; margin-bottom: 0;">support@aurasound.com<br>info@aurasound.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image 1 (Requirement 4) -->
+                    <div class="contact-card" style="text-align: center;">
+                        <img src="images/customer_support.png" alt="Customer Support Agent" style="border-radius: var(--radius-sm); margin-bottom: 15px;" id="img-contact-support">
+                        <p style="font-size: 0.9rem; margin-bottom: 10px;">Fast and friendly customer support ready to help.</p>
+                        <!-- Requirement 6: Button with onclick event handler -->
+                        <button type="button" class="btn btn-secondary" style="width: 100%;" onclick="showToast('🎧 Live support chat requested!')">
+                            <i class="fa-solid fa-comments"></i> Start Live Chat
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Form & Additional Content -->
+                <div class="contact-form-column">
+                    
+                    <form class="styled-form" id="contact-form" onsubmit="return handleContactSubmit(event)">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 20px;">Send Us a Message</h3>
+                        
+                        <div class="form-group">
+                            <label for="contact-name" class="form-label">Full Name *</label>
+                            <input type="text" id="contact-name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email" class="form-label">Email Address *</label>
+                            <input type="email" id="contact-email" class="form-control" placeholder="Enter your email address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-subject" class="form-label">Subject</label>
+                            <select id="contact-subject" class="form-control">
+                                <option value="general">General Inquiry</option>
+                                <option value="sales">Product Sales</option>
+                                <option value="support">Technical Support</option>
+                                <option value="warranty">Warranty Claim</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message" class="form-label">Message *</label>
+                            <textarea id="contact-message" class="form-control" placeholder="Write your message here..." required></textarea>
+                        </div>
+
+                        <!-- Requirement 6: Button using onclick event handler -->
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" onclick="handleContactSubmit(event)" id="btn-submit-form">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+
+                    <!-- Additional Images and Paragraph 3 (Requirement 4) -->
+                    <div style="margin-top: 25px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div>
+                            <!-- Image 2 (Requirement 4) -->
+                            <img src="images/store_showroom.png" alt="Aura Showroom" style="border-radius: var(--radius-sm); border: 1px solid #dee2e6;" id="img-contact-showroom">
+                            <h4 style="font-size: 0.9rem; margin-top: 8px;">Showroom Interior</h4>
+                        </div>
+                        <div>
+                            <!-- Image 3 (Requirement 4) -->
+                            <img src="images/lifestyle_listening.png" alt="Product Demo" style="border-radius: var(--radius-sm); border: 1px solid #dee2e6;" id="img-contact-lifestyle">
+                            <h4 style="font-size: 0.9rem; margin-top: 8px;">Testing Room</h4>
+                        </div>
+                    </div>
+
+                    <!-- Paragraph 3 (Requirement 4) -->
+                    <div class="contact-card" style="margin-top: 20px;">
+                        <h4>Visit Our Listening Lounge</h4>
+                        <p style="font-size: 0.9rem; margin-top: 8px;">
+                            We invite customers to visit our store and test our headphones in person. Book a quick 30-minute demo session to try out different models with your favorite music tracks.
+                        </p>
+                        <!-- Requirement 6: Button using onclick event handler -->
+                        <button class="btn btn-secondary" style="width: 100%; margin-top: 10px;" onclick="showToast('📅 Demo session request sent!')" id="btn-book-session">
+                            <i class="fa-solid fa-calendar-check"></i> Request Store Visit
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ================= FOOTER (Requirement 2) ================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="logo" style="margin-bottom: 10px;"><i class="fa-solid fa-headphones"></i> AURA SOUND</h3>
+                    <p>Providing simple, reliable, and high-quality audio products for music enthusiasts worldwide.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="products.html">Warranty Policy</a></li>
+                        <li><a href="contact.html">Shipping Info</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Subscribe to Updates</h4>
+                    <p>Get notified about new product arrivals and discounts.</p>
+                    <div class="footer-newsletter-input">
+                        <input type="email" id="newsletter-email" placeholder="Your email address...">
+                        <!-- Requirement 6: Button with onclick event handler -->
+                        <button class="btn btn-primary" onclick="subscribeNewsletter()" id="footer-subscribe-btn">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aura Sound. All Rights Reserved. Student ID: 2211059</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick Preview Modal Dialog -->
+    <div class="modal-overlay" id="quick-modal">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+            <h3 id="modal-title" style="margin-bottom: 10px; color: #0d6efd;">Product Preview</h3>
+            <p id="modal-desc" style="margin-bottom: 20px;">Product description will appear here.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #dee2e6; padding-top: 15px;">
+                <span id="modal-price" style="font-size: 1.3rem; font-weight: 700; color: #0d6efd;">$0</span>
+                <button class="btn btn-primary" onclick="closeModal(); showToast('Preview closed');">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
